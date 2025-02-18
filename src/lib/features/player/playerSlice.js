@@ -12,10 +12,13 @@ export const playerSlice = createSlice({
       let num_value = parseInt(state.left)
       num_value += 10
       state.left = num_value + 'px'
+    },
+    resetPosition: (state) => {
+      state.left = '50px'
     }
   }
 });
 
-export const { moveRight } = playerSlice.actions;
+export const { moveRight, resetPosition } = playerSlice.actions;
 
 export default playerSlice.reducer;

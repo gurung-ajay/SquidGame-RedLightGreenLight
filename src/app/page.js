@@ -10,7 +10,7 @@ import GameOver from '@/components/game-over';
 export default function Home() {
   
   const {left} = useSelector(state => state.player)
-  const {gameStatus, win_status} = useSelector(state => state.gameLogic)
+  const {gameStatus} = useSelector(state => state.gameLogic)
   const {facingPlayer} = useSelector(state => state.youngHee)
   const dispatch = useDispatch()
 
@@ -19,7 +19,6 @@ export default function Home() {
     if (parseInt(left) == 700){
       dispatch(gameWon())
       dispatch(finishGame())
-      prompt('won')
     }
   }, [left])
 
@@ -28,7 +27,6 @@ export default function Home() {
       if (e.key === 'ArrowRight' && facingPlayer) {
         dispatch(gameLost())
         dispatch(finishGame())
-        prompt('GameOver');
       }
     };
   
