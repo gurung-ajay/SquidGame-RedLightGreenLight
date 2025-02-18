@@ -5,12 +5,12 @@ import { useDispatch, useSelector } from 'react-redux'
 
 const Player = () => {
   const {left} = useSelector(state => state.player)
-  const dispatcher = useDispatch()
+  const dispatch = useDispatch()
 
   useEffect(() => {
     window.addEventListener('keydown', (e) => {
       if(e.key === 'ArrowRight') {
-        dispatcher(moveRight())
+        dispatch(moveRight())
       }
     })
   }, [])
