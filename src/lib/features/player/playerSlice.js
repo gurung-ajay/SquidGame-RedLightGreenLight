@@ -1,11 +1,21 @@
-import React from 'react'
+import { createSlice } from '@reduxjs/toolkit';
 
-const playerSlice = () => {
-  return (
-    <div>
-        
-    </div>
-  )
-}
+const initialState = {
+  left: '50px'
+};
 
-export default playerSlice
+export const playerSlice = createSlice({
+  name: 'player',
+  initialState,
+  reducers: {
+    moveRight: (state) => {
+      let num_value = parseInt(state.left)
+      num_value += 10
+      state.left = num_value + 'px'
+    }
+  }
+});
+
+export const { moveRight } = playerSlice.actions;
+
+export default playerSlice.reducer;
