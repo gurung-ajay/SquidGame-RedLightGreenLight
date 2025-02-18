@@ -5,21 +5,22 @@ import { useDispatch, useSelector } from 'react-redux'
 
 const Player = () => {
   const {left} = useSelector(state => state.player)
+  const {gameStatus} = useSelector(state => state.gameLogic)
   const dispatch = useDispatch()
 
   useEffect(() => {
+    if (gameStatus !== 'running') return; // give player control only when game is running
+
     window.addEventListener('keydown', (e) => {
       if(e.key === 'ArrowRight') {
         dispatch(moveRight())
       }
     })
-  }, [])
+  }, [gameStatus])
 
   return (
     <div>
-        <
-          
-          Image src={'/player.png'} width={100} height={200} alt='player' className='w-[90px] h-[160px] relative' style={{top:'360px', left:left}}/>
+        <Image src={'/player.png'} width={100} height={200} alt='player' className='w-[90px] h-[160px] relative' style={{top:'360px', left:left}}/>
     </div>
   )
 }
