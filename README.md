@@ -52,7 +52,7 @@ This is a web-based implementation of the "Red Light, Green Light" game from the
 - The game starts with the status `not_running`.
 - When the game starts, the status changes to `running`.
 - The player can move using the ArrowRight key only when the game is running.
-- Young-Hee flips direction at random intervals.
+- Young-Hee (the big doll) flips direction at random intervals.
 - If the player moves when Young-Hee is facing them, the game status changes to `finished` and the player loses.
 - If the player reaches the finish line, the game status changes to `finished` and the player wins.
 
