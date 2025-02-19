@@ -17,7 +17,7 @@ This is a web-based implementation of the "Red Light, Green Light" game from the
 ## Features
 
 - Player can move using the ArrowRight key.
-- Young-Hee character flips direction at random intervals.
+- Young-Hee (the big doll) flips direction at random intervals.
 - Game status management (running, not_running, finished).
 - Audio playback when Young-Hee is facing the player.
 - Redux for state management.
