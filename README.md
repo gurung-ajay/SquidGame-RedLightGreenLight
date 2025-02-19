@@ -2,6 +2,8 @@
 
 This is a web-based implementation of the "Red Light, Green Light" game from the popular series "Squid Game". The game is built using the NEXT JS, React and Redux for state management.
 
+![Screen Recording 2025-02-19 211353](https://github.com/user-attachments/assets/db3335dd-54b8-409c-b37e-78bc65ac6d30)
+
 ## Table of Contents
 
 - [Features](#features)
@@ -66,7 +68,3 @@ This is a web-based implementation of the "Red Light, Green Light" game from the
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
