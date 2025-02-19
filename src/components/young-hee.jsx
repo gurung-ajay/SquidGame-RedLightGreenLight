@@ -5,7 +5,8 @@ import { useDispatch, useSelector } from 'react-redux'
 
 
 const YoungHee = () => {
-  const audioRef = useRef(new Audio('/squid_games_remix.mp3'));
+  const audioRef = useRef(typeof Audio !== 'undefined' ? new Audio('/squid_games_remix.mp3') : null);
+
 
   const { facingPlayer } = useSelector(state => state.youngHee)
   const { gameStatus } = useSelector(state => state.gameLogic)
@@ -13,7 +14,7 @@ const YoungHee = () => {
   const dispatch = useDispatch();
 
   // to pass random interval values to flip young-hee at random intervals
-  const random_intervals = [4000,2000, 2000, 1000]
+  const random_intervals = [4000,2000,2000,3000]
   const getRandomInterval = () => {
     const randomIndex = Math.floor(Math.random() * random_intervals.length);
     console.log(random_intervals[randomIndex])
