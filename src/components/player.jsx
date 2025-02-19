@@ -9,14 +9,20 @@ const Player = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    if (gameStatus !== 'running') return; // give player control only when game is running
-
-    window.addEventListener('keydown', (e) => {
-      if(e.key === 'ArrowRight') {
-        dispatch(moveRight())
+    if (gameStatus === 'not_running' || gameStatus === 'finished') return; // give player control only when game is running
+  
+    const handleKeyDown = (e) => {
+      if (e.key === 'ArrowRight') {
+        dispatch(moveRight());
       }
-    })
-  }, [gameStatus])
+    };
+  
+    window.addEventListener('keydown', handleKeyDown);
+  
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [gameStatus]);
 
   return (
     <div>
